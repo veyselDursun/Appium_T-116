@@ -36,6 +36,7 @@ public class AllCurrencyConventer {
         // uygulamanin acildigi dogrulanir
 
          String updateButonText = all.updateButton.getText();
+         System.out.println(updateButonText);
          String expected = "CURRENCY\n" +
                             "UPDATE";
          Assert.assertEquals(updateButonText,expected);
@@ -53,17 +54,21 @@ public class AllCurrencyConventer {
         ReusableMethods.scrollWithUiScrollableAndClick("0");
 
         // cevrilen tutar screenShot olarak kaydedilir
-             /*
+             /* Methodsuz yapilisi
                File ekranKaydi =driver.getScreenshotAs(OutputType.FILE);
                FileUtils.copyFile(ekranKaydi,new File("CeviriSonuc.jpg"));
              */
 
+            // Method ile yapilisi
+
         ReusableMethods.getScreenshot("ZlotyToTL");
 
         // Ardindan zloty nin tl karsiligi olan tl degeri kaydedilir
+        String exchangeResult = all.result.getText();
+        driver.sendSMS("555555555555",exchangeResult);
+
         // bu islem dolar tl, sweden kron-tl, Japon yeni- tl olarak tekrarlanir ve kullaniciya sms olarak bildirilir
 
     }
-
 
 }

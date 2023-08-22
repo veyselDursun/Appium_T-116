@@ -16,4 +16,7 @@ public class AllCurrencyConverterPage {
     @FindBy(id = "com.smartwho.SmartAllCurrencyConverter:id/buttonRefresh")
     public WebElement updateButton;
 
+    @FindBy(id = "com.smartwho.SmartAllCurrencyConverter:id/EditTextCurrencyB")
+    public WebElement result;
+
 }
